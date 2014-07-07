@@ -33,7 +33,7 @@ namespace Gnip
       //if (maxRecords > -1 && next == null)
       queryString = urlString + "?query=" + query + "%20bounding_box%3A%5B" + boundingBox + "%5D&publisher=twitter";
 
-      if (next != "")
+      if (next != "" && next != null)
        queryString += "&next=" + next;
 
       HttpWebRequest request = makeRequest(queryString, username, password);

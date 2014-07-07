@@ -65,8 +65,10 @@ namespace ArcGISWPFSDK
       Next = "";
       //TODO: MaxRecords. Give the user some UI to enter this
 
-      //TODO: need to implement a recursive structure to be used when we have a next value returned from Gnip. 
-
+      QueryGnip(); 
+    }
+    private void QueryGnip()
+    {
       GnipResponse response = BuildQuery();
 
       if (response == null)
@@ -74,8 +76,11 @@ namespace ArcGISWPFSDK
 
       EditFeatureService(response);
 
-      if (response.Next != "")
+      if (response.Next != "" && response.Next != null)
+      {
         Next = response.Next;
+        QueryGnip();
+      }
     }
 
     private GnipResponse BuildQuery()
