@@ -4,7 +4,12 @@
              xmlns:esri="http://schemas.esri.com/arcgis/client/2009">
     <Grid>
         <Grid.Resources>
-            <!--<local:FlagsEnumValueConverter x:Key="FlagsConverter"/>-->
+            <esri:SimpleRenderer x:Key="MySimplePointRenderer">
+                <esri:SimpleRenderer.Symbol>
+                    <esri:SimpleMarkerSymbol Color="Orange"/>
+                </esri:SimpleRenderer.Symbol>
+            </esri:SimpleRenderer>
+
         </Grid.Resources>
         <Grid>
             <esri:Map x:Name="MyMap"  UseAcceleratedDisplay="True" Grid.ColumnSpan="2" Extent="-11727994.8826084,4861083.86091801,-11709499.9383759,4873034.26541133"
@@ -14,8 +19,21 @@
                     Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"/>
                     
                     <esri:FeatureLayer ID="GnipFeatureLayer"
-                    Url="http://services.arcgis.com/q7zPNeKmTWeh7Aor/ArcGIS/rest/services/Gnip/FeatureServer/0" Mode="OnDemand"/>             
-                
+                    Url="http://services.arcgis.com/q7zPNeKmTWeh7Aor/ArcGIS/rest/services/Gnip/FeatureServer/0" Mode="OnDemand"
+                                       Renderer="{StaticResource MySimplePointRenderer}"
+                    OutFields="username,body">
+                    <esri:FeatureLayer.MapTip>
+                        <Border BorderBrush="Black" BorderThickness="2" Margin="0,0,15,15" Background="White">
+                            <StackPanel Margin="7">
+                                <TextBlock Text="{Binding [username]}" FontWeight="Bold"   />
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Body: "  />
+                                    <TextBlock Text="{Binding [body]}"  />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </esri:FeatureLayer.MapTip>
+                </esri:FeatureLayer>
             </esri:Map>
 
             <Grid HorizontalAlignment="Left" Margin="2,2,0,2" Height="750" VerticalAlignment="Top" Width="500">
