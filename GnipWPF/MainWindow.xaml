@@ -67,15 +67,15 @@
                         <!-- Color Scheme & Depth Display Units -->
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="User Name:"  Margin="5,0,0,0" Width="80" VerticalAlignment="Top"/>
-                            <TextBox Name="txtGnipUserName" Text="{Binding Path=GnipUserName, Mode=TwoWay, FallbackValue=mylessutherland@gmail.com }" Width="120" VerticalAlignment="Top"/>
+                            <TextBox Name="txtGnipUserName" Text="{Binding Path=GnipUserName, Mode=TwoWay }" Width="120" VerticalAlignment="Top"/>
                             
                             <TextBlock Text="Password:" Margin="5,0,0,0"  Width="80" VerticalAlignment="Top"/>
-                            <PasswordBox Name="txtGnipPassword" Password="honey898" Width="120" VerticalAlignment="Top"/>
+                            <PasswordBox Name="txtGnipPassword" Password="" Width="120" VerticalAlignment="Top"/>
                         </StackPanel>
                         <!-- Point and Area Symbolization Type -->
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Account:"  Margin="5,0,0,0" Width="80" VerticalAlignment="Center"/>
-                            <TextBox Name="txtAccount" Text="{Binding Path=GnipID, FallbackValue=Esri}" Width="120" VerticalAlignment="Top"  />
+                            <TextBox Name="txtAccount" Text="{Binding Path=GnipID}" Width="120" VerticalAlignment="Top"  />
                             
                             <TextBlock Text="Publisher:" Margin="5,0,0,0"  Width="80" VerticalAlignment="Center"/>
                             <TextBox Text="{Binding Path=Pulbisher, FallbackValue=Twitter}" Width="120" VerticalAlignment="Top"  />
