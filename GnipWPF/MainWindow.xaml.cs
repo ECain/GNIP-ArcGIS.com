@@ -61,7 +61,7 @@ namespace ArcGISWPFSDK
       GnipUserName = txtGnipUserName.Text;
       GnipPassword = txtGnipPassword.Password;
       GnipID = txtAccount.Text;
-      Query = txtQuery.Text.ToLower();
+      Query = txtQuery.Text.ToLower().Replace("#", "");
       Next = "";
       //TODO: MaxRecords. Give the user some UI to enter this
 
