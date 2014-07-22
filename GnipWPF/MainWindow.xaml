@@ -110,7 +110,7 @@
                             <TextBox Name="txtUserN" Text="{Binding Path=AGOLUserName, FallbackValue=edan}"  Width="120" VerticalAlignment="Top"/>
                             
                             <TextBlock Text="Password:"  Margin="5,0,0,0"  Width="80" VerticalAlignment="Top"/>
-                            <PasswordBox Name="txtPassw" Password="za64cpf4793"  Width="120" VerticalAlignment="Top"/>
+                            <PasswordBox Name="txtPassw" Password=""  Width="120" VerticalAlignment="Top"/>
                         </StackPanel>
                         <!-- Point and Area Symbolization Type -->
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
